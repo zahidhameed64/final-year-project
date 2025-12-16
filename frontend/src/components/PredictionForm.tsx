@@ -15,21 +15,45 @@ export function PredictionForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        // Simulate API call
-        setTimeout(() => {
-            // Mock calculation based on notebook logic (roughly)
-            // Just a random variance for now based on subscribers
-            const formData = new FormData(e.target as HTMLFormElement);
-            const subs = Number(formData.get("subscribers"));
-            const views = Number(formData.get("views"));
+        setResult(null);
 
-            // Simple heuristic for mock: ~ $1-5 per 1000 views adjusted heavily
-            // Using notebook's random forest insight: views & subs are top features
-            const mockPrediction = (views * 0.002) + (subs * 0.05) + (Math.random() * 50000);
+        const formData = new FormData(e.target as HTMLFormElement);
 
-            setResult(Math.round(mockPrediction));
+        try {
+            const response = await fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    subscribers: formData.get("subscribers"),
+                    video_views: formData.get("views"),
+                    uploads: formData.get("uploads"),
+                    category: formData.get("category"),
+                    created_year: formData.get("created_year"),
+                    country: formData.get("country"),
+                    title: formData.get("title"),
+                    channel_type: "Entertainment" // Default since it was excluded from training
+                }),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch prediction");
+            }
+
+            const data = await response.json();
+            if (data.success) {
+                setResult(Math.round(data.predicted_earnings));
+            } else {
+                console.error("Prediction error:", data.error);
+                alert("Error getting prediction: " + data.error);
+            }
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Failed to connect to backend. Make sure train_model.py has been run and app.py is running on port 5000.");
+        } finally {
             setLoading(false);
-        }, 1500);
+        }
     };
 
     return (
@@ -48,6 +72,10 @@ export function PredictionForm() {
                         <CardContent className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
+                                    <Label htmlFor="title">Channel Name</Label>
+                                    <Input id="title" name="title" type="text" placeholder="e.g. MrBeast" required />
+                                </div>
+                                <div className="space-y-2">
                                     <Label htmlFor="subscribers">Subscribers</Label>
                                     <Input id="subscribers" name="subscribers" type="number" placeholder="e.g. 1000000" required />
                                 </div>
@@ -60,8 +88,16 @@ export function PredictionForm() {
                                     <Input id="uploads" name="uploads" type="number" placeholder="e.g. 500" required />
                                 </div>
                                 <div className="space-y-2">
+                                    <Label htmlFor="created_year">Created Year</Label>
+                                    <Input id="created_year" name="created_year" type="number" placeholder="e.g. 2012" required />
+                                </div>
+                                <div className="space-y-2">
                                     <Label htmlFor="category">Category</Label>
                                     <Input id="category" name="category" type="text" placeholder="e.g. Entertainment" required />
+                                </div>
+                                <div className="md:col-span-2 space-y-2">
+                                    <Label htmlFor="country">Country</Label>
+                                    <Input id="country" name="country" type="text" placeholder="e.g. United States" required />
                                 </div>
                             </div>
                         </CardContent>
@@ -70,7 +106,7 @@ export function PredictionForm() {
                                 {loading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                        Analyzing Channel...
+                                        Connecting to AI Model...
                                     </>
                                 ) : (
                                     "Predict Yearly Earnings"
@@ -117,6 +153,6 @@ export function PredictionForm() {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
+        </div >
     );
 }

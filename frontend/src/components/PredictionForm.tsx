@@ -89,6 +89,10 @@ export function PredictionForm() {
                                     <Input id="uploads" name="uploads" type="number" placeholder="e.g. 500" required />
                                 </div>
                                 <div className="space-y-2">
+                                    <Label htmlFor="created_year">Created Year</Label>
+                                    <Input id="created_year" name="created_year" type="number" placeholder="e.g. 2012" required />
+                                </div>
+                                <div className="space-y-2">
                                     <Label htmlFor="category">Category</Label>
                                     <Input id="category" name="category" type="text" placeholder="e.g. Entertainment" required />
                                 </div>
@@ -119,7 +123,7 @@ export function PredictionForm() {
                                 {loading ? (
                                     <>
                                         <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                        Analyzing Channel...
+                                        Connecting to AI Model...
                                     </>
                                 ) : (
                                     "Predict Yearly Earnings"

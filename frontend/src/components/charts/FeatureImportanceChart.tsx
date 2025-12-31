@@ -12,17 +12,39 @@ import {
 
 const featureImportanceData = [
     { name: "Video Views", importance: 0.65, fill: "#8b5cf6" },
-    { name: "Subscribers", importance: 0.25, fill: "#22d3ee" },
-    { name: "Uploads", importance: 0.05, fill: "#a1a1aa" },
-    { name: "Channel Age", importance: 0.03, fill: "#a1a1aa" },
-    { name: "Category", importance: 0.02, fill: "#a1a1aa" },
 ];
 
 export function FeatureImportanceChart() {
+    const [data, setData] = React.useState<any[]>([]);
+
+    React.useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const res = await fetch("http://localhost:5000/api/feature-importance");
+                if (res.ok) {
+                    const jsonData = await res.json();
+                    // Assuming jsonData is [{name: string, importance: number}, ...]
+                    // Map to include random colors or standard colors
+                    const colors = ["#8b5cf6", "#22d3ee", "#a1a1aa", "#f472b6", "#34d399"];
+                    const formattedData = jsonData.map((item: any, index: number) => ({
+                        ...item,
+                        fill: colors[index % colors.length]
+                    }));
+                    setData(formattedData);
+                }
+            } catch (err) {
+                console.error("Failed to fetch importance data", err);
+            }
+        };
+        fetchData();
+    }, []);
+
+    if (data.length === 0) return <div className="p-4 text-center text-muted-foreground">Loading importance data...</div>;
+
     return (
         <ResponsiveContainer width="100%" height={350}>
             <BarChart
-                data={featureImportanceData}
+                data={data}
                 layout="vertical"
                 margin={{ left: 20 }}
             >

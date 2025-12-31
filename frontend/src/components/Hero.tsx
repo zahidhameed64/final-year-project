@@ -12,7 +12,7 @@ export function Hero() {
                 </span>
             </h1>
             <p className="text-lg text-muted-foreground md:text-xl">
-                Leverage advanced machine learning to predict YouTube revenue with 98%
+                Leverage advanced machine learning to predict YouTube revenue with high
                 accuracy based on channel metrics.
             </p>
         </section>

@@ -15,21 +15,48 @@ export function PredictionForm() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        // Simulate API call
-        setTimeout(() => {
-            // Mock calculation based on notebook logic (roughly)
-            // Just a random variance for now based on subscribers
-            const formData = new FormData(e.target as HTMLFormElement);
-            const subs = Number(formData.get("subscribers"));
-            const views = Number(formData.get("views"));
+        setResult(null); // Reset previous result
 
-            // Simple heuristic for mock: ~ $1-5 per 1000 views adjusted heavily
-            // Using notebook's random forest insight: views & subs are top features
-            const mockPrediction = (views * 0.002) + (subs * 0.05) + (Math.random() * 50000);
+        const formData = new FormData(e.target as HTMLFormElement);
+        // Map frontend fields to backend expected feature names
+        // Backend expects: 'subscribers', 'video views', 'uploads', 'category'
+        const payload = {
+            subscribers: Number(formData.get("subscribers")),
+            "video views": Number(formData.get("views")),
+            uploads: Number(formData.get("uploads")),
+            category: formData.get("category") as string,
+            Country: formData.get("country") as string,
+            channel_type: formData.get("channel_type") as string,
+            created_year: Number(formData.get("created_year"))
+        };
 
-            setResult(Math.round(mockPrediction));
+        try {
+            // In dev, Next.js rewrites can point /api to localhost:5000, 
+            // or we use full URL if CORS is enabled (which we did).
+            const response = await fetch("http://localhost:5000/api/predict", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(payload),
+            });
+
+            if (!response.ok) {
+                throw new Error("Failed to fetch prediction");
+            }
+
+            const data = await response.json();
+            if (data.prediction !== undefined) {
+                setResult(Math.round(data.prediction));
+            } else {
+                console.error("No prediction in response:", data);
+            }
+        } catch (error) {
+            console.error("Prediction error:", error);
+            // Optionally handle error state here
+        } finally {
             setLoading(false);
-        }, 1500);
+        }
     };
 
     return (
@@ -62,6 +89,18 @@ export function PredictionForm() {
                                 <div className="space-y-2">
                                     <Label htmlFor="category">Category</Label>
                                     <Input id="category" name="category" type="text" placeholder="e.g. Entertainment" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="country">Country</Label>
+                                    <Input id="country" name="country" type="text" placeholder="e.g. United States" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="channel_type">Channel Type</Label>
+                                    <Input id="channel_type" name="channel_type" type="text" placeholder="e.g. Games" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="created_year">Channel Creation Year</Label>
+                                    <Input id="created_year" name="created_year" type="number" placeholder="e.g. 2018" required />
                                 </div>
                             </div>
                         </CardContent>

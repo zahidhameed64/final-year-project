@@ -9,6 +9,7 @@ import {
     XAxis,
     YAxis,
 } from "recharts";
+import { useTheme } from "next-themes";
 
 const featureImportanceData = [
     { name: "Video Views", importance: 0.65, fill: "#8b5cf6" },
@@ -16,6 +17,14 @@ const featureImportanceData = [
 
 export function FeatureImportanceChart() {
     const [data, setData] = React.useState<any[]>([]);
+    const { theme } = useTheme();
+
+    // Theme-aware colors
+    const isDark = theme === 'dark';
+    const axisColor = isDark ? "#a1a1aa" : "#52525b"; // Zinc 400 vs Zinc 600
+    const tooltipBg = isDark ? "#18181b" : "#ffffff";
+    const tooltipBorder = isDark ? "#27272a" : "#e4e4e7";
+    const tooltipText = isDark ? "#fafafa" : "#09090b";
 
     React.useEffect(() => {
         const fetchData = async () => {
@@ -53,17 +62,17 @@ export function FeatureImportanceChart() {
                     dataKey="name"
                     type="category"
                     width={100}
-                    tick={{ fill: "#a1a1aa", fontSize: 12 }}
+                    tick={{ fill: axisColor, fontSize: 12 }}
                     axisLine={false}
                     tickLine={false}
                 />
                 <Tooltip
                     contentStyle={{
-                        backgroundColor: "#18181b",
-                        borderColor: "#27272a",
+                        backgroundColor: tooltipBg,
+                        borderColor: tooltipBorder,
                         borderRadius: "8px",
                     }}
-                    itemStyle={{ color: "#fafafa" }}
+                    itemStyle={{ color: tooltipText }}
                     cursor={{ fill: "transparent" }}
                 />
                 <Bar dataKey="importance" radius={[0, 4, 4, 0]} barSize={32} />

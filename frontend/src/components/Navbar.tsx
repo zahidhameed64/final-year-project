@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Youtube, BarChart3 } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 export function Navbar() {
     return (
@@ -14,11 +15,7 @@ export function Navbar() {
                     <Link href="https://github.com" target="_blank" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
                         Documentation
                     </Link>
-                    <div className="h-4 w-px bg-border"></div>
-                    <div className="flex items-center gap-1 text-sm font-medium text-accent">
-                        <BarChart3 className="w-4 h-4" />
-                        <span>v1.0.0</span>
-                    </div>
+                    <ThemeToggle />
                 </div>
             </div>
         </nav>

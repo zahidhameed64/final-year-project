@@ -27,7 +27,9 @@ export function PredictionForm() {
             category: formData.get("category") as string,
             Country: formData.get("country") as string,
             channel_type: formData.get("channel_type") as string,
-            created_year: Number(formData.get("created_year"))
+            created_year: Number(formData.get("created_year")),
+            video_views_for_the_last_30_days: Number(formData.get("views_30d")),
+            subscribers_for_last_30_days: Number(formData.get("subs_30d"))
         };
 
         try {
@@ -101,6 +103,14 @@ export function PredictionForm() {
                                 <div className="space-y-2">
                                     <Label htmlFor="created_year">Channel Creation Year</Label>
                                     <Input id="created_year" name="created_year" type="number" placeholder="e.g. 2018" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="views_30d">Views (Last 30 Days)</Label>
+                                    <Input id="views_30d" name="views_30d" type="number" placeholder="e.g. 1000000" required />
+                                </div>
+                                <div className="space-y-2">
+                                    <Label htmlFor="subs_30d">Subscribers (Last 30 Days)</Label>
+                                    <Input id="subs_30d" name="subs_30d" type="number" placeholder="e.g. 5000" required />
                                 </div>
                             </div>
                         </CardContent>

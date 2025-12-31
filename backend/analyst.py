@@ -135,7 +135,8 @@ class YouTubeAnalyst:
         feature_cols = [
             'subscribers', 'video views', 'uploads', 
             'category', 'Country', 'channel_type',
-            'views_per_upload', 'channel_age_years'
+            'views_per_upload', 'channel_age_years',
+            'video_views_for_the_last_30_days', 'subscribers_for_last_30_days'
         ]
         
         # Filter existing columns
@@ -205,6 +206,9 @@ class YouTubeAnalyst:
         input_df['uploads'] = pd.to_numeric(input_df.get('uploads', 0))
         input_df['video views'] = pd.to_numeric(input_df.get('video views', 0))
         input_df['subscribers'] = pd.to_numeric(input_df.get('subscribers', 0))
+        # New features defaults
+        input_df['video_views_for_the_last_30_days'] = pd.to_numeric(input_df.get('video_views_for_the_last_30_days', 0))
+        input_df['subscribers_for_last_30_days'] = pd.to_numeric(input_df.get('subscribers_for_last_30_days', 0))
         
         # Derived
         current_year = datetime.datetime.now().year

@@ -8,7 +8,7 @@ For many of these creators, YouTube is not merely a hobby but a primary source o
 
 Understanding these dynamics is crucial not only for aspiring content creators seeking to optimize their strategies but also for marketers, brands, and analysts aiming to value digital assets. The sheer volume of data available—millions of channels and billions of interactions—presents a unique opportunity to apply data science and machine learning techniques. By analyzing historical data, it becomes possible to uncover patterns and build predictive models that can estimate channel earnings and identify key drivers of success.
 
-This project, the "YouTube Income Predictor," addresses this need by leveraging advanced machine learning algorithms to analyze YouTube channel statistics. By integrating this analytical backend with a user-friendly modern web interface, the system provides real-time predictions and actionable insights, bridging the gap between raw data and understandable financial forecasts.
+This project, the "YouTube Earnings Prediction and Automated Report Generation System," addresses this need by leveraging advanced machine learning algorithms to analyze YouTube channel statistics. By integrating this analytical backend with a user-friendly modern web interface, the system provides real-time predictions and actionable insights, bridging the gap between raw data and understandable financial forecasts.
 
 ## 1.2 Problem Statement
 
@@ -137,7 +137,7 @@ The literature supports the approach taken in this project: using robust ensembl
 
 ## 3.1 Introduction
 
-This chapter outlines the systematic approach used to develop the "YouTube Income Predictor." It details the software development lifecycle, the system architecture, the data pipeline (collection, cleaning, preprocessing), and the specific machine learning methodologies applied to train the predictive models.
+This chapter outlines the systematic approach used to develop the "YouTube Earnings Prediction System." It details the software development lifecycle, the system architecture, the data pipeline (collection, cleaning, preprocessing), and the specific machine learning methodologies applied to train the predictive models.
 
 ## 3.2 System Architecture
 
@@ -213,7 +213,7 @@ The methodology ensures a robust data pipeline. By combining thorough cleaning, 
 
 ## 4.1 Introduction
 
-This chapter provides a technical deep-dive into the codebase of the "YouTube Income Predictor." It describes the folder structure, the specific logic implemented in the backend Python modules, and the component hierarchy of the frontend React application.
+This chapter provides a technical deep-dive into the codebase of the "YouTube Earnings Prediction System." It describes the folder structure, the specific logic implemented in the backend Python modules, and the component hierarchy of the frontend React application.
 
 ## 4.2 Project Structure
 
@@ -291,7 +291,7 @@ The implementation successfully couples a scientific Python backend with a consu
 
 ## 5.1 Introduction
 
-This chapter presents the findings obtained from the development and execution of the "YouTube Income Predictor." It evaluates the performance of the machine learning model, interprets the significant features driving the predictions, and discusses the usability of the developed web interface.
+This chapter presents the findings obtained from the development and execution of the "YouTube Earnings Prediction System." It evaluates the performance of the machine learning model, interprets the significant features driving the predictions, and discusses the usability of the developed web interface.
 
 ## 5.2 Model Performance Analysis
 
@@ -344,7 +344,7 @@ One limitation noted is the reliance on the "Global YouTube Statistics" dataset.
 
 ## 6.1 Conclusion
 
-The "YouTube Income Predictor" represents a successful synthesis of data science methodologies and modern web engineering principles. By rigorously applying the Random Forest Regression algorithm to the "Global YouTube Statistics" dataset, the project has demonstrated that it is possible to predict channel earnings with a high degree of correlation ($R^2 \approx 0.85$) using publicly visible metrics.
+The "YouTube Earnings Prediction and Automated Report Generation System" represents a successful synthesis of data science methodologies and modern web engineering principles. By rigorously applying the Random Forest Regression algorithm to the "Global YouTube Statistics" dataset, the project has demonstrated that it is possible to predict channel earnings with a high degree of correlation ($R^2 \approx 0.85$) using publicly visible metrics.
 
 The development of the full-stack application—leveraging Flask for the analytical backend and Next.js for the responsive frontend—has achieved the primary objective of democratizing access to these insights. Users, regardless of their technical background, can now interact with complex machine learning models through a simple, intuitive dashboard. The system provides not just a predicted number, but context: explaining *why* a prediction was made through Feature Importance visualization and *how confident* the model is via accuracy metrics.
 
@@ -386,7 +386,7 @@ By addressing these limitations and pursuing these future directions, the system
 
 ## 7.1 Introduction
 
-This user manual allows users to set up, run, and utilize the "YouTube Income Predictor." The software is designed to be user-friendly, but initial installation requires basic familiarity with command-line tools.
+This user manual allows users to set up, run, and utilize the "YouTube Earnings Prediction System." The software is designed to be user-friendly, but initial installation requires basic familiarity with command-line tools.
 
 ## 7.2 System Requirements
 

@@ -2,7 +2,7 @@
 
 ## 4.1 Introduction
 
-This chapter provides a technical deep-dive into the codebase of the "YouTube Income Predictor." It describes the folder structure, the specific logic implemented in the backend Python modules, and the component hierarchy of the frontend React application.
+This chapter provides a technical deep-dive into the codebase of the "YouTube Earnings Prediction System." It describes the folder structure, the specific logic implemented in the backend Python modules, and the component hierarchy of the frontend React application.
 
 ## 4.2 Project Structure
 

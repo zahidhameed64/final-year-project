@@ -2,7 +2,7 @@
 
 ## 7.1 Introduction
 
-This user manual allows users to set up, run, and utilize the "YouTube Income Predictor." The software is designed to be user-friendly, but initial installation requires basic familiarity with command-line tools.
+This user manual allows users to set up, run, and utilize the "YouTube Earnings Prediction System." The software is designed to be user-friendly, but initial installation requires basic familiarity with command-line tools.
 
 ## 7.2 System Requirements
 

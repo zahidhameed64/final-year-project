@@ -15,8 +15,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "YouTube Income Predictor",
-  description: "AI-Powered YouTube Income Predictor",
+  title: "YouTube Earnings Intelligence",
+  description: "AI-Powered YouTube Earnings Prediction",
 };
 
 import { ThemeProvider } from "@/components/ThemeProvider";

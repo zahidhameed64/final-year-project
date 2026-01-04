@@ -2,7 +2,7 @@
 
 ## 6.1 Conclusion
 
-The "YouTube Income Predictor" represents a successful synthesis of data science methodologies and modern web engineering principles. By rigorously applying the Random Forest Regression algorithm to the "Global YouTube Statistics" dataset, the project has demonstrated that it is possible to predict channel earnings with a high degree of correlation ($R^2 \approx 0.85$) using publicly visible metrics.
+The "YouTube Earnings Prediction and Automated Report Generation System" represents a successful synthesis of data science methodologies and modern web engineering principles. By rigorously applying the Random Forest Regression algorithm to the "Global YouTube Statistics" dataset, the project has demonstrated that it is possible to predict channel earnings with a high degree of correlation ($R^2 \approx 0.85$) using publicly visible metrics.
 
 The development of the full-stack application—leveraging Flask for the analytical backend and Next.js for the responsive frontend—has achieved the primary objective of democratizing access to these insights. Users, regardless of their technical background, can now interact with complex machine learning models through a simple, intuitive dashboard. The system provides not just a predicted number, but context: explaining *why* a prediction was made through Feature Importance visualization and *how confident* the model is via accuracy metrics.
 

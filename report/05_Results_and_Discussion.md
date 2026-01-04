@@ -2,7 +2,7 @@
 
 ## 5.1 Introduction
 
-This chapter presents the findings obtained from the development and execution of the "YouTube Income Predictor." It evaluates the performance of the machine learning model, interprets the significant features driving the predictions, and discusses the usability of the developed web interface.
+This chapter presents the findings obtained from the development and execution of the "YouTube Earnings Prediction System." It evaluates the performance of the machine learning model, interprets the significant features driving the predictions, and discusses the usability of the developed web interface.
 
 ## 5.2 Model Performance Analysis
 

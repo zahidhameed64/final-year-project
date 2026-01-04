@@ -8,7 +8,7 @@ For many of these creators, YouTube is not merely a hobby but a primary source o
 
 Understanding these dynamics is crucial not only for aspiring content creators seeking to optimize their strategies but also for marketers, brands, and analysts aiming to value digital assets. The sheer volume of data available—millions of channels and billions of interactions—presents a unique opportunity to apply data science and machine learning techniques. By analyzing historical data, it becomes possible to uncover patterns and build predictive models that can estimate channel earnings and identify key drivers of success.
 
-This project, the "YouTube Income Predictor," addresses this need by leveraging advanced machine learning algorithms to analyze YouTube channel statistics. By integrating this analytical backend with a user-friendly modern web interface, the system provides real-time predictions and actionable insights, bridging the gap between raw data and understandable financial forecasts.
+This project, the "YouTube Earnings Prediction and Automated Report Generation System," addresses this need by leveraging advanced machine learning algorithms to analyze YouTube channel statistics. By integrating this analytical backend with a user-friendly modern web interface, the system provides real-time predictions and actionable insights, bridging the gap between raw data and understandable financial forecasts.
 
 ## 1.2 Problem Statement
 

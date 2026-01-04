@@ -2,7 +2,7 @@
 
 ## 3.1 Introduction
 
-This chapter outlines the systematic approach used to develop the "YouTube Income Predictor." It details the software development lifecycle, the system architecture, the data pipeline (collection, cleaning, preprocessing), and the specific machine learning methodologies applied to train the predictive models.
+This chapter outlines the systematic approach used to develop the "YouTube Earnings Prediction System." It details the software development lifecycle, the system architecture, the data pipeline (collection, cleaning, preprocessing), and the specific machine learning methodologies applied to train the predictive models.
 
 ## 3.2 System Architecture
 

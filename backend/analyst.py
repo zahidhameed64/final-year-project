@@ -62,6 +62,20 @@ class YouTubeAnalyst:
         if 'created_year' in self.df.columns:
             self.df = self.df[self.df['created_year'] >= 2005]
 
+        # Remove rows with 0 earnings (invalid data or demonetized)
+        if 'highest_yearly_earnings' in self.df.columns:
+             self.df = self.df[self.df['highest_yearly_earnings'] > 0]
+
+
+        # REFACTOR: Remove extreme earnings outliers using IQR to "solve" the corporate skew
+        if 'highest_yearly_earnings' in self.df.columns:
+            Q1 = self.df['highest_yearly_earnings'].quantile(0.25)
+            Q3 = self.df['highest_yearly_earnings'].quantile(0.75)
+            IQR = Q3 - Q1
+            # Using a multiplier of 1.5 (standard) to drop corporate outliers
+            upper_bound = Q3 + 1.5 * IQR
+            self.df = self.df[self.df['highest_yearly_earnings'] <= upper_bound]
+
         self.df = self.df.reset_index(drop=True)
 
     def _feature_engineering(self):
@@ -256,7 +270,8 @@ class YouTubeAnalyst:
             pos = list(self.y_test.index).index(idx)
             actual = self.y_test.loc[idx]
             pred = self.y_pred[pos]
-            samples.append({"actual": float(actual), "predicted": float(pred)})
+            channel_name = self.df.loc[idx, 'Youtuber'] if 'Youtuber' in self.df.columns else "Unknown"
+            samples.append({"channel": str(channel_name), "actual": float(actual), "predicted": float(pred)})
             
         return {
             "rmse": rmse,

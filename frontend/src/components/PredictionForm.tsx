@@ -11,11 +11,13 @@ import { motion, AnimatePresence } from "framer-motion";
 export function PredictionForm() {
     const [loading, setLoading] = useState(false);
     const [result, setResult] = useState<number | null>(null);
+    const [accuracy, setAccuracy] = useState<number | null>(null);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
-        setResult(null); // Reset previous result
+        setResult(null);
+        setAccuracy(null);
 
         const formData = new FormData(e.target as HTMLFormElement);
         // Map frontend fields to backend expected feature names
@@ -26,10 +28,10 @@ export function PredictionForm() {
             uploads: Number(formData.get("uploads")),
             category: formData.get("category") as string,
             Country: formData.get("country") as string,
-            channel_type: formData.get("channel_type") as string,
-            created_year: Number(formData.get("created_year")),
+            channel_type: "Unknown", // Default as input was removed
+            Youtuber: formData.get("youtuber") as string,
             video_views_for_the_last_30_days: Number(formData.get("views_30d")),
-            subscribers_for_last_30_days: Number(formData.get("subs_30d"))
+            created_year: Number(formData.get("created_year"))
         };
 
         try {
@@ -50,6 +52,9 @@ export function PredictionForm() {
             const data = await response.json();
             if (data.prediction !== undefined) {
                 setResult(Math.round(data.prediction));
+                if (data.accuracy !== undefined) {
+                    setAccuracy(data.accuracy * 100);
+                }
             } else {
                 console.error("No prediction in response:", data);
             }
@@ -70,7 +75,7 @@ export function PredictionForm() {
             >
                 <Card className="w-full h-full">
                     <CardHeader>
-                        <CardTitle>Channel Statistics</CardTitle>
+                        <CardTitle>Channel Metrics</CardTitle>
                         <CardDescription>Enter the YouTube channel's public metrics to predict earnings.</CardDescription>
                     </CardHeader>
                     <form onSubmit={handleSubmit}>
@@ -101,21 +106,14 @@ export function PredictionForm() {
                                     <Input id="country" name="country" type="text" placeholder="e.g. United States" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="channel_type">Channel Type</Label>
-                                    <Input id="channel_type" name="channel_type" type="text" placeholder="e.g. Games" required />
-                                </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="created_year">Channel Creation Year</Label>
-                                    <Input id="created_year" name="created_year" type="number" placeholder="e.g. 2018" required />
+                                    <Label htmlFor="youtuber">Channel Name</Label>
+                                    <Input id="youtuber" name="youtuber" type="text" placeholder="e.g. MrBeast" required />
                                 </div>
                                 <div className="space-y-2">
                                     <Label htmlFor="views_30d">Views (Last 30 Days)</Label>
                                     <Input id="views_30d" name="views_30d" type="number" placeholder="e.g. 1000000" required />
                                 </div>
-                                <div className="space-y-2">
-                                    <Label htmlFor="subs_30d">Subscribers (Last 30 Days)</Label>
-                                    <Input id="subs_30d" name="subs_30d" type="number" placeholder="e.g. 5000" required />
-                                </div>
+
                             </div>
                         </CardContent>
                         <CardFooter>
@@ -154,7 +152,10 @@ export function PredictionForm() {
 
                             <div className="flex gap-2 items-center text-sm text-accent bg-accent/10 px-3 py-1 rounded-full">
                                 <TrendingUp className="w-4 h-4" />
-                                <span>Based on Random Forest Regression Model</span>
+                                <span>
+                                    Based on Random Forest Regression Model
+                                    {accuracy !== null && ` (Accuracy: ${accuracy.toFixed(2)}%)`}
+                                </span>
                             </div>
                         </Card>
                     </motion.div>

@@ -49,7 +49,9 @@ def predict():
         data = request.json
         # Expected keys: subscribers, video views, etc.
         prediction = analyst.predict(data)
-        return jsonify({"prediction": prediction})
+        accuracy_metrics = analyst.get_model_accuracy()
+        r2_score = accuracy_metrics.get("r2", 0)
+        return jsonify({"prediction": prediction, "accuracy": r2_score})
     except Exception as e:
         return jsonify({"error": str(e)}), 400
 

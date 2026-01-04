@@ -131,12 +131,11 @@ class YouTubeAnalyst:
             # Fallback if columns missing (though they should be there from load)
             target_col = 'highest_yearly_earnings'
         
-        # Features to train on
         feature_cols = [
             'subscribers', 'video views', 'uploads', 
             'category', 'Country', 'channel_type',
             'views_per_upload', 'channel_age_years',
-            'video_views_for_the_last_30_days', 'subscribers_for_last_30_days'
+            'video_views_for_the_last_30_days'
         ]
         
         # Filter existing columns

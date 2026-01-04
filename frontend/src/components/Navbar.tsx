@@ -8,7 +8,7 @@ export function Navbar() {
             <div className="container mx-auto px-4 h-16 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 font-heading font-bold text-xl tracking-tight hover:text-primary transition-colors">
                     <Youtube className="w-8 h-8 text-primary" />
-                    <span>YouTube <span className="text-primary">Earnings</span> Intelligence</span>
+                    <span>YouTube <span className="text-primary">Income</span> Predictor</span>
                 </Link>
 
                 <div className="flex items-center gap-4">

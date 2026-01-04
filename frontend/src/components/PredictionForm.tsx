@@ -82,35 +82,35 @@ export function PredictionForm() {
                         <CardContent className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <Label htmlFor="subscribers">Subscribers</Label>
+                                    <Label htmlFor="subscribers">Subscribers <span className="text-red-500">*</span></Label>
                                     <Input id="subscribers" name="subscribers" type="number" placeholder="e.g. 1000000" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="views">Total Video Views</Label>
+                                    <Label htmlFor="views">Total Video Views <span className="text-red-500">*</span></Label>
                                     <Input id="views" name="views" type="number" placeholder="e.g. 500000000" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="uploads">Uploads</Label>
+                                    <Label htmlFor="uploads">Uploads <span className="text-red-500">*</span></Label>
                                     <Input id="uploads" name="uploads" type="number" placeholder="e.g. 500" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="created_year">Created Year</Label>
+                                    <Label htmlFor="created_year">Created Year <span className="text-red-500">*</span></Label>
                                     <Input id="created_year" name="created_year" type="number" placeholder="e.g. 2012" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="category">Category</Label>
+                                    <Label htmlFor="category">Category <span className="text-red-500">*</span></Label>
                                     <Input id="category" name="category" type="text" placeholder="e.g. Entertainment" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="country">Country</Label>
+                                    <Label htmlFor="country">Country <span className="text-red-500">*</span></Label>
                                     <Input id="country" name="country" type="text" placeholder="e.g. United States" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="youtuber">Channel Name</Label>
+                                    <Label htmlFor="youtuber">Channel Name <span className="text-red-500">*</span></Label>
                                     <Input id="youtuber" name="youtuber" type="text" placeholder="e.g. MrBeast" required />
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="views_30d">Views (Last 30 Days)</Label>
+                                    <Label htmlFor="views_30d">Views (Last 30 Days) <span className="text-red-500">*</span></Label>
                                     <Input id="views_30d" name="views_30d" type="number" placeholder="e.g. 1000000" required />
                                 </div>
 

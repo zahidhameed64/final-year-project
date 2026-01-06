@@ -105,6 +105,12 @@ Start-Sleep -Seconds 5
 Write-Host "Starting Next.js Frontend on Port 3000..." -ForegroundColor Green
 Push-Location frontend
 # Start in the CURRENT window so the user can see frontend logs/errors directly
+Write-Host "Launching browser in 5 seconds..." -ForegroundColor Cyan
+Start-Job -ScriptBlock { 
+    Start-Sleep -Seconds 5
+    Start-Process "http://localhost:3000"
+} | Out-Null
+
 npm run dev
 Pop-Location
 

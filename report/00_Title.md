@@ -12,7 +12,7 @@ Submitted in partial fulfillment of the requirements for the degree of
 M. Zahid Hameed
 
 **Supervisor:**
-M. Sohale Sajid
+M. Sohail Sajid
 
 ---
 

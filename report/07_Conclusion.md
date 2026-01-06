@@ -2,7 +2,7 @@
 
 ## 7.1 Summary of Achievement
 
-The "Data-to-Narrative Automated Report Generator" project set out with the ambitious goal of demystifying the YouTube Creator Economy through Machine Learning. Over the course of this development, we have successfully met and often exceeded our primary objectives.
+The "Youtube Income Predictor" project set out with the ambitious goal of demystifying the YouTube Creator Economy through Machine Learning. Over the course of this development, we have successfully met and often exceeded our primary objectives.
 
 1.  **Predictive Accuracy:** The Random Forest Regressor achieved an **$R^2$ of 0.85**, proving that channel earnings are not random but follow predictable patterns based on engagement metrics.
 2.  **Usable Interface:** The development of a React-based Dashboard provides a professional, delay-free user experience (<200ms latency), making advanced analytics accessible to non-technical users.
@@ -37,4 +37,4 @@ Port the React frontend to **React Native** to offer a native mobile experience 
 
 ## 7.4 Final Remarks
 
-The "Data-to-Narrative" project stands as a testament to the power of data. By transforming raw numbers into clear, visual narratives, we empower content creators to treat their passion as a business, making informed decisions backed by statistical evidence rather than intuition alone.
+The "Youtube Income Predictor" project stands as a testament to the power of data. By transforming raw numbers into clear, visual narratives, we empower content creators to treat their passion as a business, making informed decisions backed by statistical evidence rather than intuition alone.

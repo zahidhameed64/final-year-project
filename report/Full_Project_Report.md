@@ -1,27 +1,24 @@
 
-# Data-to-Narrative Automated Report Generator
+# Youtube Income Predictor
 
 **A Final Year Project Report**
 
 Submitted in partial fulfillment of the requirements for the degree of
-**Bachelor of Science in Computer Science**
+**Bachelor of Science in Data Science**
 
 ---
 
 **Author:**
-[Your Name]
+M. Zahid Hameed
 
 **Supervisor:**
-[Supervisor Name]
-
-**Date:**
-January 2026
+M. Sohale Sajid
 
 ---
 
 # Abstract
 
-In the rapidly evolving digital economy, content creators on platforms like YouTube face significant challenges in understanding the financial dynamics of their channels. Existing analytics provided by platforms are often opaque, and third-party tools offer broad estimates without actionable insights. This project addresses this gap by developing a "**Data-to-Narrative Automated Report Generator**," a full-stack web application that leverages Machine Learning to predict channel earnings and generate natural language reports.
+In the rapidly evolving digital economy, content creators on platforms like YouTube face significant challenges in understanding the financial dynamics of their channels. Existing analytics provided by platforms are often opaque, and third-party tools offer broad estimates without actionable insights. This project addresses this gap by developing a "**Youtube Income Predictor**," a full-stack web application that leverages Machine Learning to predict channel earnings and generate natural language reports.
 
 Using a **Random Forest Regressor** trained on a global dataset of YouTube statistics, the system predicts yearly earnings with an **$R^2$ accuracy of 0.85**, significantly outperforming linear baselines. The application, built with **Next.js** and **Flask**, features an interactive dashboard that visualizes Feature Importance, allowing creators to identify critical growth metrics like "Views Per Upload" and "Category Niche." This report details the complete software development lifecycle, from the theoretical framework and algorithm selection to the system architecture and final implementation, demonstrating how AI can be democratized to empower the Creator Economy.
 
@@ -188,7 +185,7 @@ The review of existing literature reveals a clear gap:
 
 ## 3.1 Introduction
 
-Before implementation, a thorough analysis and design phase was conducted to ensure the "Data-to-Narrative" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development.
+Before implementation, a thorough analysis and design phase was conducted to ensure the "Youtube Income Predictor" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development.
 
 ## 3.2 Requirement Analysis
 
@@ -554,7 +551,7 @@ While the model performs well, some outliers remain difficult to predict.
 
 ## 7.1 Summary of Achievement
 
-The "Data-to-Narrative Automated Report Generator" project set out with the ambitious goal of demystifying the YouTube Creator Economy through Machine Learning. Over the course of this development, we have successfully met and often exceeded our primary objectives.
+The "Youtube Income Predictor" project set out with the ambitious goal of demystifying the YouTube Creator Economy through Machine Learning. Over the course of this development, we have successfully met and often exceeded our primary objectives.
 
 1.  **Predictive Accuracy:** The Random Forest Regressor achieved an **$R^2$ of 0.85**, proving that channel earnings are not random but follow predictable patterns based on engagement metrics.
 2.  **Usable Interface:** The development of a React-based Dashboard provides a professional, delay-free user experience (<200ms latency), making advanced analytics accessible to non-technical users.
@@ -589,7 +586,7 @@ Port the React frontend to **React Native** to offer a native mobile experience 
 
 ## 7.4 Final Remarks
 
-The "Data-to-Narrative" project stands as a testament to the power of data. By transforming raw numbers into clear, visual narratives, we empower content creators to treat their passion as a business, making informed decisions backed by statistical evidence rather than intuition alone.
+The "Youtube Income Predictor" project stands as a testament to the power of data. By transforming raw numbers into clear, visual narratives, we empower content creators to treat their passion as a business, making informed decisions backed by statistical evidence rather than intuition alone.
 # Chapter 8: Appendices
 
 ## Appendix A: Source Code Listings

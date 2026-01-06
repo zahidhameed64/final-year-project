@@ -2,7 +2,7 @@
 
 ## 3.1 Introduction
 
-Before implementation, a thorough analysis and design phase was conducted to ensure the "Data-to-Narrative" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development.
+Before implementation, a thorough analysis and design phase was conducted to ensure the "Youtube Income Predictor" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development.
 
 ## 3.2 Requirement Analysis
 

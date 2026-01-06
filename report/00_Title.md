@@ -1,27 +1,24 @@
 
-# Data-to-Narrative Automated Report Generator
+# Youtube Income Predictor
 
 **A Final Year Project Report**
 
 Submitted in partial fulfillment of the requirements for the degree of
-**Bachelor of Science in Computer Science**
+**Bachelor of Science in Data Science**
 
 ---
 
 **Author:**
-[Your Name]
+M. Zahid Hameed
 
 **Supervisor:**
-[Supervisor Name]
-
-**Date:**
-January 2026
+M. Sohale Sajid
 
 ---
 
 # Abstract
 
-In the rapidly evolving digital economy, content creators on platforms like YouTube face significant challenges in understanding the financial dynamics of their channels. Existing analytics provided by platforms are often opaque, and third-party tools offer broad estimates without actionable insights. This project addresses this gap by developing a "**Data-to-Narrative Automated Report Generator**," a full-stack web application that leverages Machine Learning to predict channel earnings and generate natural language reports.
+In the rapidly evolving digital economy, content creators on platforms like YouTube face significant challenges in understanding the financial dynamics of their channels. Existing analytics provided by platforms are often opaque, and third-party tools offer broad estimates without actionable insights. This project addresses this gap by developing a "**Youtube Income Predictor**," a full-stack web application that leverages Machine Learning to predict channel earnings and generate natural language reports.
 
 Using a **Random Forest Regressor** trained on a global dataset of YouTube statistics, the system predicts yearly earnings with an **$R^2$ accuracy of 0.85**, significantly outperforming linear baselines. The application, built with **Next.js** and **Flask**, features an interactive dashboard that visualizes Feature Importance, allowing creators to identify critical growth metrics like "Views Per Upload" and "Category Niche." This report details the complete software development lifecycle, from the theoretical framework and algorithm selection to the system architecture and final implementation, demonstrating how AI can be democratized to empower the Creator Economy.
 

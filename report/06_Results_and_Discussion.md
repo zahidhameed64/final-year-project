@@ -20,42 +20,42 @@ A simple Linear Regression was run as a baseline, achieving an $R^2$ of only **0
 
 ### 6.3.1 Earnings Distribution
 ![Distribution of Earnings](images/earnings_distribution.png)
-*Figure 6.1: Histogram of Yearly Earnings (Log Scale)*
+*Fig. 1. Histogram of Yearly Earnings (Log Scale)*
 
-The distribution of earnings (Figure 6.1) follows a **Log-Normal distribution**. The majority of channels cluster around the median, but the "long tail" to the right represents the "superstar" channels (e.g., MrBeast, T-Series) earning significantly more.
+The distribution of earnings (see Fig. 1) follows a **Log-Normal distribution**. The majority of channels cluster around the median, but the "long tail" to the right represents the "superstar" channels (e.g., MrBeast, T-Series) earning significantly more.
 *   **Insight:** This skewness justifies the use of Log-Transformation during preprocessing or using tree-based models that handle skewed data well.
 
 ### 6.3.2 Correlation Analysis
 ![Correlation Matrix](images/correlation_matrix.png)
-*Figure 6.2: Heatmap of Feature Correlations*
+*Fig. 2. Heatmap of Feature Correlations*
 
-The correlation matrix (Figure 6.2) reveals the strongest predictors of `highest_yearly_earnings`:
+The correlation matrix (see Fig. 2) reveals the strongest predictors of `highest_yearly_earnings`:
 1.  **`video_views_for_the_last_30_days` (Correlation: 0.9+):** This is by far the strongest predictor. It proves that **current activity** drives revenue, not historical prestige.
 2.  **`video views` (Total):** High correlation, but less than "last 30 days".
 3.  **`subscribers`:** Surprisingly lower correlation compared to views. This finding is critical: having millions of subscribers does not guarantee income if they are not watching.
 
 ### 6.3.3 The "Views vs. Earnings" Relationship
 ![Views vs Earnings](images/views_vs_earnings.png)
-*Figure 6.3: Scatter Plot of Recent Views vs. Yearly Earnings*
+*Fig. 3. Scatter Plot of Recent Views vs. Yearly Earnings*
 
-Figure 6.3 shows a tight linear clustering when plotted on a log-log scale.
+Fig. 3 shows a tight linear clustering when plotted on a log-log scale.
 *   **Pattern:** As views increase, earnings increase, but the *rate* varies by category.
 *   **Outliers:** The points scattered far above the trendline likely represent high-CPM niches (Finance, Tech), while those below are likely low-CPM (Shorts, Comedy).
 
 ### 6.3.4 Category Performance
 ![Category Earnings](images/category_earnings.png)
-*Figure 6.4: Average Earnings by Category*
+*Fig. 4. Average Earnings by Category*
 
-The breakdown by category (Figure 6.4) highlights significant disparities:
+The breakdown by category (see Fig. 4) highlights significant disparities:
 *   **Top Earners:** `Entertainment` and `Music` channels dominate the top earnings bracket due to massive viral potential.
 *   **Consistency:** `Education` and `Tech` channels show lower *peak* earnings but higher consistency (less variance).
 
 ## 6.4 Feature Importance Analysis
 
 ![Feature Importance](images/feature_importance.png)
-*Figure 6.5: Top 10 Important Features from Random Forest*
+*Fig. 5. Top 10 Important Features from Random Forest*
 
-The Random Forest's built-in feature importance (Figure 6.5) corroborates the correlation analysis but adds nuance:
+The Random Forest's built-in feature importance (see Fig. 5) corroborates the correlation analysis but adds nuance:
 *   **Feature 1 (Recent Views):** Contributes >60% to the model's decision making.
 *   **Feature 2 (Uploads):** Plays a role, but diminishing returns exist.
 *   **Feature 3 (Category):** While individual correlation is low, the *combination* of Category and Views is a powerful predictor.

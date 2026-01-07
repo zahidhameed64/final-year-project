@@ -1,6 +1,4 @@
-# Chapter 9: References
-
-# Chapter 9: References
+# Chapter 8: References
 
 Banks, A., & Porcello, E. (2020). *Learning React: Modern Patterns for Developing React Apps* (2nd ed.). O'Reilly Media, Inc.
 

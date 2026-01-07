@@ -31,3 +31,4 @@
     - [x] **Expand:** Detailed technical sections (React/Flask, Architecture, Data Modeling).
     - [x] **Fix:** Removed duplicate "Introduction" headers.
     - [x] **Expand:** Rewrote Conclusion and Future Work sections.
+    - [x] **Verify:** Added 5 new References and ensured all are cited in-text.

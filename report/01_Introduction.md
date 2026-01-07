@@ -1,5 +1,7 @@
 # Chapter 1: Introduction
 
+The world of digital content creation has undergone a seismic shift in the last decade, transitioning from a leisure activity to a global industry worth billions of dollars. Essential to this "Creator Economy" is YouTube, a platform that empowers individuals to broadcast their lives and skills to a worldwide audience. However, traversing the path from an amateur uploader to a financially successful creator is fraught with uncertainty. This chapter sets the stage for our study, outlining the economic landscape of modern content creation and defining the specific problem—the opacity of earnings algorithms—that this project seeks to solve. We begin by exploring the background of this digital revolution.
+
 ## 1.1 Background of the Study
 
 ### 1.1.1 The Rise of the Creator Economy

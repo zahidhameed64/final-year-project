@@ -1,6 +1,12 @@
 # Chapter 5: Implementation
 
-## 5.1 Development Environment
+## 5.1 Introduction
+
+With the design blueprints finalized and the methodology defined, the project moved into the Implementation phase. This is where theory meets reality. The objective of this phase was to translate the logical architecture described in Chapter 3 into a tangible, working software product. This required a disciplined approach to coding, version control, and system integration, ensuring that the disparate components—the Machine Learning backend and the React frontend—could operate as a unified whole.
+
+This chapter documents the engineering process. It details the **Development Environment** established to ensure code quality and reproducibility. It then provides a walkthrough of the **Backend Implementation**, explaining how the mathematical models were encapsulated into Python classes and exposed via RESTful APIs. Subsequently, it covers the **Frontend Implementation**, focusing on the user interface design choices that enable non-technical users to interact with complex data. Finally, it discusses the challenge of **Integration**, describing how Cross-Origin Resource Sharing (CORS) and asynchronous data fetching were handled to create a seamless user experience.
+
+## 5.2 Development Environment
 
 The project was developed in a robust local environment designed to ensure stability and performance. We utilized **Windows 10/11** as the primary Operating System. The core coding was done in **Visual Studio Code (VS Code)**, enriched with extensions for Python, Prettier, and ESLint to maintain code quality. **Git** was employed for source code management, allowing us to track changes and revert to previous states if necessary. For dependency management, we used `pip` for Python libraries and `npm` for JavaScript packages, ensuring that all libraries were kept up to date and compatible.
 

@@ -2,7 +2,11 @@
 
 ## 2.1 Introduction
 
-The convergence of Big Data, Machine Learning, and Web Application Development has revolutionized how we understand digital platforms and their economic impact. To build a robust system for predicting YouTube channel earnings, it is essential to understand the existing body of knowledge. This chapter reviews relevant literature across three primary domains: **Social Media Analytics & Economics**, **Machine Learning Regression Techniques**, and **Modern Web Architecture**. It also identifies gaps in current research that this project aims to address.
+## 2.1 Introduction
+
+The convergence of Big Data, Machine Learning, and Web Application Development has revolutionized how we understand digital platforms and their economic impact. In the past decade, social media has transformed from a communication utility into a massive global marketplace, necessitating a new wave of academic and technical scrutiny. To build a robust system for predicting YouTube channel earnings, it is not enough to simply write code; one must first understand the theoretical underpinnings of the Creator Economy and the statistical methods best suited to model it.
+
+This chapter serves as the theoretical foundation for the project. It conducts a comprehensive review of relevant literature across three primary domains: **Social Media Analytics & Economics**, which explores the financial incentives driving content creation; **Machine Learning Regression Techniques**, which evaluates the mathematical models available for prediction; and **Modern Web Architecture**, which assesses the technological frameworks required to deliver these insights to users. By synthesizing knowledge from these diverse fields, we identify the limitations of current solutions and define the specific research gap that this project aims to address.
 
 ## 2.2 Social Media Analytics and The Creator Economy
 

@@ -1,6 +1,12 @@
 # Chapter 7: Conclusion and Future Work
 
-## 7.1 Summary of Achievement
+## 7.1 Introduction
+
+Every software engineering project is a journey of discovery. The "Youtube Income Predictor" project began with a simple question: can we use public data to demystify the financial workings of the world's largest video platform? Through the phases of literature review, system design, rigorous methodology, and full-stack implementation, we have arrived at a functional solution that not only answers this question but also provides a practical tool for creators.
+
+This final chapter serves to synthesize the entire undertaking. It begins with a **Summary of Achievements**, revisiting our initial objectives to demonstrate how each was met through specific technical features. It then provides an honest assessment of the **Constraints and Limitations** encountered, acknowledging the boundaries of our current model. Finally, it looks forward, proposing a roadmap of **Future Enhancements** that could transform this academic project into a viable commercial product.
+
+## 7.2 Summary of Achievement
 
 The "Youtube Income Predictor" project set out with the ambitious goal of demystifying the YouTube Creator Economy through Machine Learning. Over the course of this development, we have successfully met and often exceeded our primary objectives.
 

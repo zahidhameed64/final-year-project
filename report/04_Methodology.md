@@ -2,7 +2,11 @@
 
 ## 4.1 Introduction
 
-This chapter details the methodology employed to develop the prediction model. It follows the standard **KDD (Knowledge Discovery in Databases)** process: Data Collection, Preprocessing, Transformation, Data Mining (Modeling), and Evaluation. This systematic approach ensures that the model is built on clean, reliable data and that its results are scientifically valid and reproducible.
+## 4.1 Introduction
+
+Scientific validity in any data-driven project hinges on the methodology employed. It is the bridge between the research question—"Can we predict YouTube earnings?"—and the final conclusion. This chapter details the systematic approach taken to develop the solution, following the industry-standard **KDD (Knowledge Discovery in Databases)** process. This framework ensures that our findings are not merely artifacts of random chance but are results of a reproducible, rigorous scientific process.
+
+The methodology is structured sequentially, mirroring the flow of data through our system. It begins with **Data Collection**, explaining the sourcing and auditing of our dataset. It then moves to **Preprocessing and Transformation**, detailing how raw, messy real-world data is cleaned and converted into a machine-readable format; this includes our strategy for handling outliers and computing derived features. Finally, it elaborates on the **Data Mining** phase, justifying our selection of the Random Forest algorithm over other candidates, and the **Evaluation** metrics used to assess its success. By clearly documenting these steps, we ensure that the model is transparent, explainable, and defensible.
 
 ## 4.2 Research Design
 

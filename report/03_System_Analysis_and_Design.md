@@ -2,7 +2,11 @@
 
 ## 3.1 Introduction
 
-Before implementation, a thorough analysis and design phase was conducted to ensure the "Youtube Income Predictor" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development. The goal was to translate abstract business needs into concrete technical specifications that could be implemented by the development team.
+## 3.1 Introduction
+
+The transition from a conceptual idea to a functional software product requires a rigorous phase of System Analysis and Design. This phase is arguably the most critical in the Software Development Life Cycle (SDLC), as errors made here are exponentially more expensive to fix during implementation. Before a single line of code was written for the "Youtube Income Predictor," a thorough investigation was conducted to define the system's scope, capabilities, and constraints.
+
+This chapter details the "blueprint" of the application. It begins by outlining the **Requirement Analysis**, decomposing the user's needs into specific Functional Requirements (what the system does) and strict Non-Functional Requirements (how the system performs, such as latency and reliability). It then proceeds to a **Feasibility Study**, proving that the project is technically, economically, and operationally viable. Finally, it presents the **System Architecture**, describing the decoupled Client-Server model that allows our React frontend and Flask backend to communicate efficiently. The goal of this chapter is to translate abstract business objectives into concrete, actionable technical specifications.
 
 ## 3.2 Requirement Analysis
 

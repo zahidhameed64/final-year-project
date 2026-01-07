@@ -23,28 +23,7 @@ This is the core class responsible for handling data. It handles **Initializatio
 ### 5.2.3 API Design (`app.py`)
 The Flask application exposes RESTful endpoints to communicate with the frontend. `GET /api/health` is a heartbeat endpoint to check if the server is running. `POST /api/predict` is the primary endpoint that accepts a JSON object (subscribers, views, etc.), calls `analyst.predict_earnings()`, and returns a JSON object with `predicted_earnings` (float) and `feature_importance` (dictionary).
 
-**Code Snippet: Prediction Endpoint Detail**
-The following code snippet demonstrates how the prediction endpoint is implemented. Note the use of `try-except` blocks to ensure that any errors during inference are caught and returned as a 500 status code, preventing the server from crashing.
 
-```python
-@app.route('/api/predict', methods=['POST'])
-def predict():
-    data = request.json
-    try:
-        # The 'analyst' object handles the complex logic of converting 
-        # raw JSON into a DataFrame compatible with the model.
-        prediction, factors = analyst.predict(data)
-        
-        # We return a standard JSON response expected by the frontend
-        return jsonify({
-            'status': 'success',
-            'prediction': prediction,
-            'factors': factors
-        })
-    except Exception as e:
-        # Robust error handling ensures stability
-        return jsonify({'error': str(e)}), 500
-```
 
 ## 5.3 Frontend Implementation
 

@@ -34,3 +34,4 @@
     - [x] **Verify:** Added 5 new References and ensured all are cited in-text.
     - [x] **Cleanup:** Removed Appendix B and renumbered References to Chapter 8.
     - [x] **Fix:** Corrected Table of Contents in Title file.
+    - [x] **Fix:** Renamed `09_References.md` to `08_References.md` for consistent numbering.

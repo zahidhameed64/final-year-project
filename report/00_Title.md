@@ -32,7 +32,8 @@ Using a **Random Forest Regressor** trained on a global dataset of YouTube stati
 4.  [Chapter 4: Methodology](#chapter-4-methodology)
 5.  [Chapter 5: Implementation](#chapter-5-implementation)
 6.  [Chapter 6: Results and Discussion](#chapter-6-results-and-discussion)
-7.  [Chapter 7: Conclusion and Future Work](#chapter-7-conclusion-and-future-work)
-8.  [Chapter 8: References](#chapter-8-references)
+7.  [Chapter 7: Visualization and Insights](#chapter-7-visualization-and-insights)
+8.  [Chapter 8: Conclusion and Future Work](#chapter-8-conclusion-and-future-work)
+9.  [Chapter 9: References](#chapter-9-references)
 
 ---

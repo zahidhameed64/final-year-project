@@ -35,3 +35,5 @@
     - [x] **Cleanup:** Removed Appendix B and renumbered References to Chapter 8.
     - [x] **Fix:** Corrected Table of Contents in Title file.
     - [x] **Fix:** Renamed `09_References.md` to `08_References.md` for consistent numbering.
+    - [x] **Feature:** Added new "Chapter 7: Visualization and Insights".
+    - [x] **Refactor:** Renumbered Conclusion to Ch 8 and References to Ch 9.

@@ -22,3 +22,4 @@
     - [x] Format (Times New Roman, Fig captions)
     - [x] Compile `Full_Project_Report.md`
     - [x] **New:** Convert bullet points to paragraphs for length and style.
+    - [x] **Fix:** Regenerated missing `feature_importance.png` graph.

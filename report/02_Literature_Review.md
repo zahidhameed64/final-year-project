@@ -55,11 +55,7 @@ Traditional web development relied on "Monolithic" architectures (e.g., Django, 
 **Backend (Flask):** Flask is a "micro-framework" for Python. Unlike Django, it does not enforce a specific database or authentication system. *Grinberg (2018)* argues that Flask is ideal for wrapping Machine Learning models because it is lightweight and allows Python (the native language of Data Science) to serve requests directly without the overhead of a heavy web stack. This allows for a clean interface where the web server simply acts as a conduit to the ML inference engine.
 
 ### 2.4.3 Integration of ML in Web Apps
-Deploying ML models often involves complexity. Common strategies include:
-1.  **Model-as-a-Service:** Hosting the model on a dedicated server (e.g., TensorFlow Serving) via Docker containers. This is scalable but complex to set up.
-2.  **Embedded Model:** Loading the serialized model (Pickle/Joblib) directly into the web server memory.
-
-For this project, the **Embedded Model** approach is chosen. Since the dataset is small (<1MB) and the model size is manageable (<100MB), loading it into RAM allows for sub-millisecond inference times, providing a superior User Experience (UX) compared to the latency of a separate microservice call.
+Deploying Machine Learning models within web applications presents specific architectural challenges, primarily revolving around the balance between scalability and latency. Common industry strategies include "Model-as-a-Service," where the model is hosted on a dedicated server (e.g., via TensorFlow Serving or Docker containers) to ensure scalability, though this often introduces setup complexity and network latency. Alternatively, the "Embedded Model" approach involves loading the serialized model (e.g., Pickle or Joblib) directly into the web server's memory. For this project, the **Embedded Model** approach was selected as the optimal solution. Given that the dataset is relatively small (<1MB) and the trained Random Forest model is lightweight (<100MB), storing it in RAM avoids the overhead of network calls. This architecture enables sub-millisecond inference times, providing a superior, near-instantaneous User Experience (UX) that would be difficult to achieve with a decoupled microservice structure.
 
 ## 2.5 Comparative Analysis of Related Systems
 

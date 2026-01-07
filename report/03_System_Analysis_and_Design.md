@@ -2,8 +2,6 @@
 
 ## 3.1 Introduction
 
-## 3.1 Introduction
-
 The transition from a conceptual idea to a functional software product requires a rigorous phase of System Analysis and Design. This phase is arguably the most critical in the Software Development Life Cycle (SDLC), as errors made here are exponentially more expensive to fix during implementation. Before a single line of code was written for the "Youtube Income Predictor," a thorough investigation was conducted to define the system's scope, capabilities, and constraints.
 
 This chapter details the "blueprint" of the application. It begins by outlining the **Requirement Analysis**, decomposing the user's needs into specific Functional Requirements (what the system does) and strict Non-Functional Requirements (how the system performs, such as latency and reliability). It then proceeds to a **Feasibility Study**, proving that the project is technically, economically, and operationally viable. Finally, it presents the **System Architecture**, describing the decoupled Client-Server model that allows our React frontend and Flask backend to communicate efficiently. The goal of this chapter is to translate abstract business objectives into concrete, actionable technical specifications.
@@ -55,7 +53,13 @@ Operationally, the system is designed for longevity and ease of maintenance. The
 
 ## 3.4 System Architecture
 
-The project follows a **Client-Server Architecture**, specifically a Three-Tier Architecture, which physically separates the presentation, logic, and data layers.
+The architectural design of the "Youtube Income Predictor" adopts a robust **Client-Server Architecture**, structured specifically around the industry-standard **Three-Tier Architecture** pattern. This design paradigm physically and logically separates the system into three distinct layers: Presentation, Application Logic, and Data. This decoupling is a strategic decision that enhances maintainability, scalability, and flexibility, ensuring that changes in one layer (e.g., updating the UI) do not necessitate rewriting code in another (e.g., the ML model).
+
+1.  **Client Tier (Presentation):** The top layer is the user interface, built using **React** and **Next.js**. It runs entirely in the user's web browser. Its primary responsibility is rendering the visual dashboard, capturing user input, and displaying the results. It contains no business logic or data processing capabilities; instead, it acts as a lightweight interface that communicates with the server via asynchronous HTTP requests.
+
+2.  **Application Tier (Logic):** The middle layer is the **Flask** backend server. This is the application's "brain." It receives requests from the Client Tier, processes them, and executes the core business logic. In our context, this involves loading the `YouTubeAnalyst` class, running the data preprocessing pipeline, and invoking the Random Forest algorithm to generate predictions. It shields the complex mathematical operations from the user.
+
+3.  **Data Tier (Storage):** The bottom layer is the persistent storage. While this project eschews a traditional heavyweight SQL database to maintain simplicity, the **CSV Dataset** and the serialized **Joblib Model** effectively serve as the data layer. They provide the historical "ground truth" and the learned parameters upon which the application relies. The Logic layer retrieves information from this tier to function, ensuring data integrity is maintained separate from execution logic.
 
 ### 3.4.1 High-Level Design
 The **Client Tier (Presentation)** consists of the User's Browser running the React Application. It handles rendering, state management, and user interaction. The **Logic Tier (Application)** is the Flask Server. It hosts the API endpoints (specifically `/api/predict` and `/api/health`) and the Machine Learning Model pipeline. Finally, the **Data Tier (Persistence)** consists of the static `Global YouTube Statistics.csv` file used for training and the serialized `model.joblib` file acting as the system's knowledge base.
@@ -65,13 +69,13 @@ The interaction flow facilitates a seamless user experience. It begins when the 
 
 ## 3.5 Data Modeling
 
-Although a comprehensive relational database was not required for this MVP, the data schema is structured rigorously to ensure consistency.
+Although the initial Minimum Viable Product (MVP) does not currently necessitate a persistent relational database like PostgreSQL, the data modeling aspect was treated with rigorous discipline. A well-defined schema is crucial for data integrity, acting as a contract between the client frontend and the machine learning backend.
 
 ### 3.5.1 Input Schema (JSON)
-The input schema is defined as a JSON object containing keys for `subscribers` (integer), `video_views` (integer), `uploads` (integer), and enumerations for `category` and `country`. This strict typing ensures that the backend receives exactly what it expects.
+The communication contract between the Client and Server is defined by a strict JSON (JavaScript Object Notation) input schema. This schema mandates that every API request to the `/api/predict` endpoint must contain specific key-value pairs with enforced data types. Essential keys include integers for `subscribers`, `video_views`, and `uploads`, ensuring that the model receives quantifiable metrics. Additionally, it enforces enumeration validation for categorical fields like `category` (e.g., 'Music', 'Education') and `country`. This strict typing acts as the first line of defense against data corruption; if a request arrives with a missing key or a string where an integer is expected, the system rejects it immediately, preventing the Machine Learning pipeline from attempting to process invalid data.
 
 ### 3.5.2 Internal Data Structure (DataFrame)
-During processing, the data is transformed into a Pandas DataFrame. After One-Hot Encoding, this frame expands to over 30 columns, including binary indicators for categories (e.g., `Category_Music`, `Category_Gaming`) and Countries. This transformation is crucial for the mathematical operations of the Random Forest algorithm.
+Internally, the Python backend transforms this lightweight JSON object into a robust **Pandas DataFrame**. This transformation is significant because it shifts the data representation from a nested object format to a tabular matrix format required by Scikit-Learn. During this process, the dimensionality of the data expands dramatically through **One-Hot Encoding**. A single user input with a category of 'Gaming' is exploded into multiple binary columns (e.g., `Category_Music=0`, `Category_Gaming=1`, `Category_Education=0`). This results in an internal Data Structure with over 30 columns, allowing the Random Forest algorithm to perform mathematical operations on categorical variables that would otherwise be intelligible to a regression model.
 
 ## 3.6 User Interface (UI) Design
 

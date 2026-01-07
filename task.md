@@ -24,5 +24,10 @@
     - [x] **New:** Convert bullet points to paragraphs for length and style.
     - [x] **Fix:** Regenerated missing `feature_importance.png` graph.
     - [x] **Expand:** Detailed critical analysis in Ch 2 and NFRs in Ch 3.
+    - [x] **Expand:** Detailed critical analysis in Ch 2 and NFRs in Ch 3.
     - [x] **Expand:** Added explanatory context for "Kaggle" in Ch 4.
     - [x] **Update:** Added specific author attribution (Nidula Elgiriyewithana) for dataset.
+    - [x] **Expand:** Added detailed Introductions to all Chapters (1-7).
+    - [x] **Expand:** Detailed technical sections (React/Flask, Architecture, Data Modeling).
+    - [x] **Fix:** Removed duplicate "Introduction" headers.
+    - [x] **Expand:** Rewrote Conclusion and Future Work sections.

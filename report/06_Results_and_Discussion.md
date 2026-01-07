@@ -2,8 +2,6 @@
 
 ## 6.1 Introduction
 
-## 6.1 Introduction
-
 The true measure of any predictive model lies not in its architecture or code quality, but in its results. After training the model and building the application, we subjected the system to a series of evaluations to interpret its findings. This chapter presents the "Moment of Truth" for the project. It moves beyond the mechanics of *how* the system works to an analysis of *what* the system has learned about the YouTube Creator Economy.
 
 This chapter is structured to provide both quantitative validation and qualitative insight. First, we present the **Model Performance Evaluation**, using rigorous metrics like $R^2$ and RMSE to objectively assess accuracy against a baseline. Following this, we conduct a deep **Visual Analysis of Findings**, interpreting the generated graphs to tell the story of the data—explaining the non-linear relationship between views and earnings, the impact of content categories, and the distribution of wealth on the platform. Finally, we engage in a critical **Discussion**, addressing the implications of these findings for creators and acknowledging the limitations of our current approach.

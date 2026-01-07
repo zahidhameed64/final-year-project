@@ -66,7 +66,7 @@ The Random Forest's built-in feature importance (see Fig. 5) corroborates the co
 One of the most profound findings of this study is the debunking of the "Subscriber Count" as the primary success metric. The data consistently shows that `subscribers` is a lagging indicator. A channel can have high subscribers (captured years ago) but low recent views, resulting in low revenue. This aligns with YouTube's algorithmic shift towards recommendation-based traffic.
 
 ### 6.5.2 Geographic Disparity
-The model (through One-Hot Encoded Country features) picked up on the fact that US-based channels earn significantly more per view than channels in developing nations (e.g., India, Brazil). This reflects the global advertising market, where US attention is "pricier" to buy.
+The model (through One-Hot Encoded Country features) picked up on the fact that US-based channels earn significantly more per view than channels in developing nations (e.g., India, Brazil). This reflects the global advertising market, where US attention is "pricier" to buy. Creators in developing regions must achieve significantly higher view counts to match the earnings of their Western counterparts.
 
 ## 6.6 Limitations of the Results
 

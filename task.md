@@ -12,6 +12,13 @@
     - [x] Run `backend/train_model.py` to generate `model.joblib`
     - [x] Run `backend/app.py` to start server
     - [x] Test frontend prediction functionality
-- [/] Optimization
+- [ ] Optimization
     - [ ] Upgrade to Gradient Boosting Regressor for better accuracy
     - [ ] Retrain and verify
+- [x] Documentation & Reporting
+    - [x] Create Report Chapters (01-09)
+    - [x] Update Metadata (Title: Youtube Income Predictor, Degree: BS Data Science)
+    - [x] Expand content to ~50 pages (Appendix, Literature Review)
+    - [x] Format (Times New Roman, Fig captions)
+    - [x] Compile `Full_Project_Report.md`
+    - [x] **New:** Convert bullet points to paragraphs for length and style.

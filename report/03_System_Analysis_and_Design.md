@@ -2,17 +2,14 @@
 
 ## 3.1 Introduction
 
-Before implementation, a thorough analysis and design phase was conducted to ensure the "Youtube Income Predictor" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development.
+Before implementation, a thorough analysis and design phase was conducted to ensure the "Youtube Income Predictor" system meets the needs of its users. This chapter outlines the software requirements, assesses the feasibility of the project, and details the architectural blueprints that guided the development. The goal was to translate abstract business needs into concrete technical specifications that could be implemented by the development team.
 
 ## 3.2 Requirement Analysis
 
-The system requirements are categorized into Functional Requirements (what the system does) and Non-Functional Requirements (how the system performs).
+The system requirements are categorized into Functional Requirements, which define what the system does, and Non-Functional Requirements, which define how the system performs. This analysis ensures that the final product is not only functional but also reliable, fast, and user-friendly.
 
 ### 3.2.1 Functional Requirements (FR)
 
-*   **FR-1 Data Ingestion:** The system shall accept user input for standard YouTube metrics, specifically:
-    *   Channel Subscribers
-    *   Video Views (Total & Last 30 Days)
     *   Upload count
     *   Channel Category (e.g., Music, Entertainment)
     *   Country of Origin

@@ -2,15 +2,10 @@
 
 ## 5.1 Development Environment
 
-The project was developed in a robust local environment to ensure stability and performance.
-*   **Operating System:** Windows 10/11.
-*   **IDE:** Visual Studio Code (VS Code) with extensions for Python, Prettier, and ESLint.
-*   **Version Control:** Git for source code management.
-*   **Package Managers:** `pip` for Python libraries and `npm` for JavaScript packages.
+The project was developed in a robust local environment designed to ensure stability and performance. We utilized **Windows 10/11** as the primary Operating System. The core coding was done in **Visual Studio Code (VS Code)**, enriched with extensions for Python, Prettier, and ESLint to maintain code quality. **Git** was employed for source code management, allowing us to track changes and revert to previous states if necessary. For dependency management, we used `pip` for Python libraries and `npm` for JavaScript packages, ensuring that all libraries were kept up to date and compatible.
 
 ## 5.2 Backend Implementation
 
-The backend serves as the "Brain" of the application, hosting the machine learning logic.
 
 ### 5.2.1 Directory Structure
 The backend is organized as a micro-application:

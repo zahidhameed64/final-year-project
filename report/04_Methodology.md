@@ -2,16 +2,16 @@
 
 ## 4.1 Introduction
 
-This chapter details the methodology employed to develop the prediction model. It follows the standard **KDD (Knowledge Discovery in Databases)** process: Data Collection, Preprocessing, Transformation, Data Mining (Modeling), and Evaluation.
+This chapter details the methodology employed to develop the prediction model. It follows the standard **KDD (Knowledge Discovery in Databases)** process: Data Collection, Preprocessing, Transformation, Data Mining (Modeling), and Evaluation. This systematic approach ensures that the model is built on clean, reliable data and that its results are scientifically valid and reproducible.
 
 ## 4.2 Research Design
 
-The study adopts a **Quantitative Research Design**. We analyze numerical and categorical data from an existing dataset to find statistical relationships. The problem is defined as a **Supervised Regression Task**, where the goal is to predict a continuous target variable (`highest_yearly_earnings`) based on a set of input features.
+The study adopts a **Quantitative Research Design**. We analyze numerical and categorical data from an existing dataset to find statistical relationships. The problem is defined as a **Supervised Regression Task**, where the goal is to predict a continuous target variable (`highest_yearly_earnings`) based on a set of input features. Unlike classification, which predicts a label, regression allows us to estimate specific monetary values, which is far more useful for financial planning.
 
 ## 4.3 Data Collection
 
 ### 4.3.1 Dataset Source
-The primary data source is the **"Global YouTube Statistics"** dataset, obtained from Kaggle. This dataset aggregates public metrics for approximately 1,000 of the most subscribed YouTube channels as of 2023.
+The primary data source is the **"Global YouTube Statistics"** dataset, obtained from Kaggle. This dataset aggregates public metrics for approximately 1,000 of the most subscribed YouTube channels as of 2023. It provides a snapshot of the elite tier of the Creator Economy, allowing us to model the characteristics of highly successful channels.
 
 ### 4.3.2 Dataset Attributes
 The dataset consists of 28 columns, categorized as follows:
